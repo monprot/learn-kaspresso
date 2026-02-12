@@ -13,7 +13,7 @@ class AvatarSelectScreenTest : TestCase() {
     val composeTestRule = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun avatarScreen_displaysFourAvatars() = run {
+    fun checkAvatarScreen() = run {
         step("Проверяем, что экран выбора аватара отображается") {
             composeTestRule
                 .onNodeWithTag(Tags.AVATAR_CONTAINER)
