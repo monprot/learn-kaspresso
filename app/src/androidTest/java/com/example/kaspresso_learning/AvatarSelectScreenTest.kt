@@ -1,6 +1,7 @@
 package com.example.kaspresso_learning
 
 import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
@@ -14,13 +15,13 @@ class AvatarSelectScreenTest : TestCase() {
 
     @Test
     fun checkAvatarScreen() = run {
-        step("Проверяем, что экран выбора аватара отображается") {
+        step("Проверить, что экран выбора аватара отображается") {
             composeTestRule
-                .onNodeWithTag(Tags.AVATAR_CONTAINER)
+                .onNode(hasTestTag(Tags.AVATAR_CONTAINER))
                 .assertIsDisplayed()
         }
 
-        step("Проверяем, что отображаются 4 иконки аватаров") {
+        step("Проверить, что отображаются 4 иконки аватаров") {
             for (i in 0..3) {
                 composeTestRule
                     .onNodeWithTag("${Tags.AVATAR_ICON}_$i")
@@ -28,7 +29,7 @@ class AvatarSelectScreenTest : TestCase() {
             }
         }
 
-        step("Проверяем, что кнопка «Далее» отображается") {
+        step("Проверить, что кнопка «Далее» отображается") {
             composeTestRule
                 .onNodeWithTag(Tags.AVATAR_NEXT_BUTTON)
                 .assertIsDisplayed()
