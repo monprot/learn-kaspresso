@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TeaLog</string>
+
+    <!-- Screen Routes -->
+    <string name="route_avatar_screen" translatable="false">avatar_screen</string>
+    <string name="route_name_input_screen" translatable="false">name_input_screen</string>
+    <string name="route_feed_screen" translatable="false">feed_screen</string>
+    <string name="route_new_brewing_screen" translatable="false">new_brewing_screen</string>
+    <string name="route_tea_select_screen" translatable="false">tea_select_screen</string>
+    <string name="route_profile_screen" translatable="false">profile_screen</string>
+</resources>
