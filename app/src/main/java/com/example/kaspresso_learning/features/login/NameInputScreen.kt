@@ -18,6 +18,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.testTag
 import androidx.compose.ui.unit.dp
@@ -41,7 +42,9 @@ fun NameInputScreen(
         Text(
             text = "Как вас зовут?",
             style = MaterialTheme.typography.headlineMedium,
-            modifier = Modifier.padding(bottom = 32.dp)
+            modifier = Modifier
+                .padding(bottom = 32.dp)
+                .testTag(Tags.NAME_EDIT_TITLE)
         )
 
         OutlinedTextField(
@@ -77,7 +80,9 @@ fun NameInputScreen(
                     isError = true
                 }
             },
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
+                .testTag(Tags.NAME_EDIT_LOGIN_BUTTON)
         ) {
             Text("Войти")
         }
