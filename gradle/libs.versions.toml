@@ -10,6 +10,7 @@ kotlin = "2.3.10"
 composeBom = "2026.01.01"
 compose = "1.10.2"
 kaspresso = "1.6.0"
+kakaoCompose = "1.1.0"
 
 [libraries]
 appcompat = "androidx.appcompat:appcompat:1.7.1"
@@ -33,6 +34,7 @@ androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-te
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 kaspresso = { group = "com.kaspersky.android-components", name = "kaspresso", version.ref = "kaspresso" }
 kaspresso-compose = { group = "com.kaspersky.android-components", name = "kaspresso-compose-support", version.ref = "kaspresso" }
+kakao-compose = { group = "io.github.kakaocup", name = "compose", version.ref = "kakaoCompose" }
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }

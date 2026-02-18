@@ -2,20 +2,14 @@ package com.example.kaspresso_learning.tests
 
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertTextContains
-import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTextInput
-import com.example.kaspresso_learning.MainActivity
 import com.example.kaspresso_learning.Tags
-import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
-import org.junit.Rule
+import com.example.kaspresso_learning.BaseTestCase
 import org.junit.Test
 
-class LoginFlowTest : TestCase() {
-
-    @get:Rule
-    val composeTestRule = createAndroidComposeRule<MainActivity>()
+class LoginFlowTest : BaseTestCase() {
 
     @Test
     fun loginToFeed() = run {
