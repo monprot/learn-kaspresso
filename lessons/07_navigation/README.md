@@ -160,8 +160,8 @@ class NavigationTest : TestCase() {
     private fun login(name: String = "Профиль") {
         composeTestRule.onNodeWithTag("${Tags.AVATAR_ICON}_0").performClick()
         composeTestRule.onNodeWithTag(Tags.AVATAR_NEXT_BUTTON).performClick()
-        composeTestRule.onNodeWithTag(Tags.NAME_EDIT_TEXT).performTextInput(name)
-        composeTestRule.onNodeWithTag(Tags.NAME_LOGIN_BUTTON).performClick()
+        composeTestRule.onNodeWithTag(Tags.NAME_INPUT_TEXT).performTextInput(name)
+        composeTestRule.onNodeWithTag(Tags.NAME_INPUT_LOGIN_BUTTON).performClick()
     }
 
     @Test
@@ -246,8 +246,8 @@ class LogoutTest : TestCase() {
     private fun login(name: String) {
         composeTestRule.onNodeWithTag("${Tags.AVATAR_ICON}_0").performClick()
         composeTestRule.onNodeWithTag(Tags.AVATAR_NEXT_BUTTON).performClick()
-        composeTestRule.onNodeWithTag(Tags.NAME_EDIT_TEXT).performTextInput(name)
-        composeTestRule.onNodeWithTag(Tags.NAME_LOGIN_BUTTON).performClick()
+        composeTestRule.onNodeWithTag(Tags.NAME_INPUT_TEXT).performTextInput(name)
+        composeTestRule.onNodeWithTag(Tags.NAME_INPUT_LOGIN_BUTTON).performClick()
     }
 
     @Test

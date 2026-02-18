@@ -6,6 +6,9 @@
 
 ---
 
+> [!NOTE]
+> Набор и реализация паттернов могут меняться от проекта к проекту, но PageObject в том или ином виде вы встретите на большинстве из них.
+
 ## Часть 1. Классический Page Object
 
 ### Зачем нужен Page Object
@@ -85,7 +88,7 @@ onComposeScreen<AvatarSelectScreen>(composeTestRule) {
 
 ```kotlin
 val loginButton: KNode = child {
-    hasTestTag(Tags.NAME_LOGIN_BUTTON)
+    hasTestTag(Tags.NAME_INPUT_LOGIN_BUTTON)
     hasText("Войти")
 }
 ```
@@ -304,7 +307,7 @@ open class BaseTestCase : TestCase(
 }
 ```
 
-Теперь все тесты наследуются от `BaseTestCase`. Так же `composeTestRule` объявлен **один раз** в базовом классе, а `kakaoComposeTestRule` регистрирует его для всех экранов.
+Теперь все тестовые классы наследуются от `BaseTestCase`. Так же `composeTestRule` объявлен **один раз** в базовом классе, а `kakaoComposeTestRule` регистрирует его для всех экранов.
 
 
 ### Почему assertIsDisplayed() перед действием
@@ -326,9 +329,9 @@ open class BaseTestCase : TestCase(
 
 Мы уже реализовали паттерн Steps для первого экрана (`AvatarSelectScreen` + `AvatarSelectSteps`).
 
-Переключитесь на ветку:
+Переключитесь на ветку `po-prepared`: 
 ```bash
-git checkout po-prepared
+git checkout -f po-prepared
 ```
 
 Изучите файлы:
@@ -338,33 +341,19 @@ git checkout po-prepared
 
 ### Шаг 2 — Создайте Screen и Steps для остальных экранов
 
-Вам нужно реализовать ту же структуру для экранов ввода имени и ленты.
+Вам нужно реализовать ту же структуру для остальных экранов.
 
 1. **NameInput**
-   - `screens/NameInputScreen.kt` — элементы (`nameField`, `loginButton`)
-   - `steps/NameInputSteps.kt` — методы `enterName(name)`, `clickLogin()`, `assertTitle(...)`
+   - `screens/NameInputScreen.kt` — элементы
+   - `steps/NameInputSteps.kt` — методы
 
 2. **Feed**
    - `screens/FeedScreen.kt` — элементы
-   - `steps/FeedSteps.kt` — методы `assertDate(...)`, `assertPost(...)`
+   - `steps/FeedSteps.kt` — методы
 
-### Шаг 3 — Перепишите LoginFlowTest через Steps
+### Шаг 3 — Перепишите тесты через Steps
 
-Перепишите `LoginFlowTest.kt` так, чтобы он использовал только Steps-объекты. В самом тесте не должно быть ни одного `onComposeScreen` или `onNode`.
-
-**Примерный вид итога:**
-
-```kotlin
-step("Сценарий входа") {
-    AvatarSelectSteps.selectAvatar(2)
-    AvatarSelectSteps.clickNext()
-    
-    NameInputSteps.enterName("User")
-    NameInputSteps.clickLogin()
-    
-    FeedSteps.checkTitle("User")
-}
-```
+Перепишите оставшиеся тесты так, чтобы они использовали только Steps-объекты. В самих тестах не должно быть ни одного `composeTestRule` или `onNodonNodeWithTag`.
 
 ---
 

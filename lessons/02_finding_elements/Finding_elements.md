@@ -404,14 +404,14 @@ class NameEditScreenTest : TestCase() {
 
             step("Проверить заголовок «Как вас зовут?»") {
                 composeTestRule
-                    .onNodeWithTag(Tags.NAME_EDIT_TITLE)
+                    .onNodeWithTag(Tags.NAME_INPUT_TITLE)
                     .assertIsDisplayed()
                     .assertTextEquals("Как вас зовут?")
             }
 
             step("Проверить отображение поля ввода имени") {
                 composeTestRule
-                    .onNodeWithTag(Tags.NAME_EDIT_TEXT)
+                    .onNodeWithTag(Tags.NAME_INPUT_TEXT)
                     .assertIsDisplayed()
             }
 

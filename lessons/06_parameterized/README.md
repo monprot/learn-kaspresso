@@ -219,8 +219,8 @@ class ParameterizedBrewingTest(
     private fun login() {
         composeTestRule.onNodeWithTag("${Tags.AVATAR_ICON}_0").performClick()
         composeTestRule.onNodeWithTag(Tags.AVATAR_NEXT_BUTTON).performClick()
-        composeTestRule.onNodeWithTag(Tags.NAME_EDIT_TEXT).performTextInput("Тестер")
-        composeTestRule.onNodeWithTag(Tags.NAME_LOGIN_BUTTON).performClick()
+        composeTestRule.onNodeWithTag(Tags.NAME_INPUT_TEXT).performTextInput("Тестер")
+        composeTestRule.onNodeWithTag(Tags.NAME_INPUT_LOGIN_BUTTON).performClick()
     }
 
     @Test

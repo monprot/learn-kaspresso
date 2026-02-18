@@ -147,8 +147,8 @@ class ValidationTest : TestCase() {
     private fun login(name: String = "Тестер") {
         composeTestRule.onNodeWithTag("${Tags.AVATAR_ICON}_0").performClick()
         composeTestRule.onNodeWithTag(Tags.AVATAR_NEXT_BUTTON).performClick()
-        composeTestRule.onNodeWithTag(Tags.NAME_EDIT_TEXT).performTextInput(name)
-        composeTestRule.onNodeWithTag(Tags.NAME_LOGIN_BUTTON).performClick()
+        composeTestRule.onNodeWithTag(Tags.NAME_INPUT_TEXT).performTextInput(name)
+        composeTestRule.onNodeWithTag(Tags.NAME_INPUT_LOGIN_BUTTON).performClick()
     }
 
     @Test
@@ -190,7 +190,7 @@ class ValidationTest : TestCase() {
 
         step("Нажимаем «Войти» с пустым полем") {
             composeTestRule
-                .onNodeWithTag(Tags.NAME_LOGIN_BUTTON)
+                .onNodeWithTag(Tags.NAME_INPUT_LOGIN_BUTTON)
                 .performClick()
         }
 
@@ -202,10 +202,10 @@ class ValidationTest : TestCase() {
 
         step("Вводим имя и входим") {
             composeTestRule
-                .onNodeWithTag(Tags.NAME_EDIT_TEXT)
+                .onNodeWithTag(Tags.NAME_INPUT_TEXT)
                 .performTextInput("Тестер")
             composeTestRule
-                .onNodeWithTag(Tags.NAME_LOGIN_BUTTON)
+                .onNodeWithTag(Tags.NAME_INPUT_LOGIN_BUTTON)
                 .performClick()
         }
 

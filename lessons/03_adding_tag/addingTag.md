@@ -53,8 +53,8 @@ object Tags {
 
     // Name Input Screen
     const val NAME_CONTAINER = "name_input_screen_container"
-    const val NAME_EDIT_TITLE = "name_input_screen_title"
-    const val NAME_EDIT_TEXT = "name_input_screen_edit_text"
+    const val NAME_INPUT_TITLE = "name_input_screen_title"
+    const val NAME_INPUT_TEXT = "name_input_screen_edit_text"
     // Login button — NO TAG (для обучения)
     // ...
 }
@@ -106,7 +106,7 @@ Button(
 ```kotlin
 object Tags {
     // ...
-    const val NAME_EDIT_BUTTON = "name_input_login_button"
+    const val NAME_INPUT_LOGIN_BUTTON = "name_input_login_button"
 }
 ```
 
@@ -117,7 +117,7 @@ Button(
     onClick = { /* ... */ },
     modifier = Modifier
         .fillMaxWidth()
-        .testTag(Tags.NAME_EDIT_BUTTON)  // ← добавили!
+        .testTag(Tags.NAME_INPUT_LOGIN_BUTTON)  // ← добавили!
 ) {
     Text("Войти")
 }
@@ -127,7 +127,7 @@ Button(
 
 ```kotlin
 composeTestRule
-    .onNodeWithTag(Tags.NAME_EDIT_BUTTON)
+    .onNodeWithTag(Tags.NAME_INPUT_LOGIN_BUTTON)
     .assertIsDisplayed()
     .performClick()
 ```
@@ -140,7 +140,7 @@ composeTestRule
 
 Прежде чем писать тест, нужно добавить недостающий тег:
 
-1. Откройте `Tags.kt` и добавьте константу `NAME_LOGIN_BUTTON = "name_input_login_button"`
+1. Откройте `Tags.kt` и добавьте константу `NAME_INPUT_LOGIN_BUTTON = "name_input_login_button"`
 2. Откройте `NameInputScreen.kt`, найдите кнопку «Войти» и добавьте тег через `Modifier.testTag`
 
 ### Шаги теста
@@ -166,7 +166,7 @@ composeTestRule
 
 ```kotlin
 composeTestRule
-    .onNodeWithTag(Tags.NAME_EDIT_TEXT)
+    .onNodeWithTag(Tags.NAME_INPUT_TEXT)
     .assertIsDisplayed()
     .performTextInput("Тестер")
 ```
