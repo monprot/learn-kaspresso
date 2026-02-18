@@ -44,7 +44,7 @@ fun NameInputScreen(
             style = MaterialTheme.typography.headlineMedium,
             modifier = Modifier
                 .padding(bottom = 32.dp)
-                .testTag(Tags.NAME_EDIT_TITLE)
+                .testTag(Tags.NAME_INPUT_TITLE)
         )
 
         OutlinedTextField(
@@ -57,7 +57,7 @@ fun NameInputScreen(
             isError = isError,
             modifier = Modifier
                 .fillMaxWidth()
-                .semantics { testTag = Tags.NAME_EDIT_TEXT }
+                .semantics { testTag = Tags.NAME_INPUT_TEXT }
         )
 
         if (isError) {
@@ -82,7 +82,7 @@ fun NameInputScreen(
             },
             modifier = Modifier
                 .fillMaxWidth()
-                .testTag(Tags.NAME_EDIT_LOGIN_BUTTON)
+                .testTag(Tags.NAME_INPUT_LOGIN_BUTTON)
         ) {
             Text("Войти")
         }

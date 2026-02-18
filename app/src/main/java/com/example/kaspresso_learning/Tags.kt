@@ -14,9 +14,9 @@ object Tags {
 
     // Name Input Screen
     const val NAME_CONTAINER = "name_input_screen_container"
-    const val NAME_EDIT_TITLE = "name_input_screen_title"
-    const val NAME_EDIT_TEXT = "name_input_screen_edit_text"
-    const val NAME_EDIT_LOGIN_BUTTON = "name_input_login_button"
+    const val NAME_INPUT_TITLE = "name_input_screen_title"
+    const val NAME_INPUT_TEXT = "name_input_screen_edit_text"
+    const val NAME_INPUT_LOGIN_BUTTON = "name_input_login_button"
 
     // Feed Screen
     const val FEED_CONTAINER = "feed_screen_container"
