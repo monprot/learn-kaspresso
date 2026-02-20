@@ -9,7 +9,7 @@ import com.example.kaspresso_learning.BaseTestCase
 import com.example.kaspresso_learning.steps.AvatarSelectSteps
 import org.junit.Test
 
-class FirstSimpleTest : BaseTestCase() {
+class NameEditScreenTest : BaseTestCase() {
 
     @Test
     fun checkNameEditScreen() = run {
