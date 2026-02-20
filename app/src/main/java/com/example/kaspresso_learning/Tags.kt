@@ -22,6 +22,7 @@ object Tags {
     const val FEED_CONTAINER = "feed_screen_container"
     const val FEED_TITLE = "feed_screen_title"
     const val FEED_POST = "feed_post"                           // + "_$index"
+    const val FEED_LIST = "feed_screen_list"
     const val FEED_FAB = "feed_screen_fab"
     const val FEED_POST_AVATAR = "feed_post_avatar"
     const val FEED_POST_AUTHOR_NAME = "feed_post_author_name"
