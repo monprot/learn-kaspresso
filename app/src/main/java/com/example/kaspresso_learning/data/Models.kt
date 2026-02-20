@@ -2,8 +2,10 @@ package com.example.kaspresso_learning.data
 
 enum class TeaType(val displayName: String) {
     GREEN("Зелёный"),
-    BLACK("Чёрный"),
+    WHITE("Белый"),
+    YELLOW("Жёлтый"),
     OOLONG("Улун"),
+    BLACK("Красный"),
     PUERH("Пуэр")
 }
 

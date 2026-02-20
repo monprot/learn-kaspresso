@@ -82,7 +82,8 @@ fun TeaSelectScreen(
                 teas = teas.filter { it.type == selectedType },
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(paddingValues),
+                    .padding(paddingValues)
+                    .semantics { testTag = Tags.TEA_SELECT_CONTAINER },
                 onTeaSelected = onTeaSelected
             )
         }

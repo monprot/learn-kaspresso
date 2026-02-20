@@ -97,7 +97,9 @@ fun FeedScreen(
                 }
             } else {
                 LazyColumn(
-                    modifier = Modifier.padding(horizontal = 16.dp),
+                    modifier = Modifier
+                        .padding(horizontal = 16.dp)
+                        .semantics { testTag = Tags.FEED_LIST },
                     verticalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
                     itemsIndexed(entries) { index, entry ->
@@ -136,7 +138,9 @@ private fun BrewingCard(entry: BrewingEntry, modifier: Modifier = Modifier) {
                     Icon(
                         imageVector = icon,
                         contentDescription = null,
-                        modifier = Modifier.size(28.dp),
+                        modifier = Modifier
+                            .size(28.dp)
+                            .semantics { testTag = Tags.FEED_POST_AVATAR },
                         tint = MaterialTheme.colorScheme.primary
                     )
                 }
@@ -145,12 +149,14 @@ private fun BrewingCard(entry: BrewingEntry, modifier: Modifier = Modifier) {
                     Text(
                         text = entry.authorName,
                         style = MaterialTheme.typography.titleSmall,
-                        fontWeight = FontWeight.SemiBold
+                        fontWeight = FontWeight.SemiBold,
+                        modifier = Modifier.semantics { testTag = Tags.FEED_POST_AUTHOR_NAME }
                     )
                     Text(
                         text = dateFormat.format(Date(entry.timestamp)),
                         style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.semantics { testTag = Tags.FEED_POST_DATE }
                     )
                 }
             }
@@ -160,12 +166,14 @@ private fun BrewingCard(entry: BrewingEntry, modifier: Modifier = Modifier) {
             Text(
                 text = entry.tea.name,
                 style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.semantics { testTag = Tags.FEED_POST_TEA_NAME }
             )
             Text(
                 text = entry.tea.type.displayName,
                 style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.primary
+                color = MaterialTheme.colorScheme.primary,
+                modifier = Modifier.semantics { testTag = Tags.FEED_POST_TEA_TYPE }
             )
 
             Spacer(modifier = Modifier.height(8.dp))
@@ -173,12 +181,14 @@ private fun BrewingCard(entry: BrewingEntry, modifier: Modifier = Modifier) {
             Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
                 Text(
                     text = "${entry.weightGrams} г",
-                    style = MaterialTheme.typography.bodyMedium
+                    style = MaterialTheme.typography.bodyMedium,
+                    modifier = Modifier.semantics { testTag = Tags.FEED_POST_WEIGHT }
                 )
                 if (entry.volumeMl != null) {
                     Text(
                         text = "${entry.volumeMl} мл",
-                        style = MaterialTheme.typography.bodyMedium
+                        style = MaterialTheme.typography.bodyMedium,
+                        modifier = Modifier.semantics { testTag = Tags.FEED_POST_VOLUME }
                     )
                 }
                 if (entry.vessel != null) {
@@ -187,13 +197,15 @@ private fun BrewingCard(entry: BrewingEntry, modifier: Modifier = Modifier) {
                             Vessel.GAIWAN -> "Гайвань"
                             Vessel.TEAPOT -> "Чайник"
                         },
-                        style = MaterialTheme.typography.bodyMedium
+                        style = MaterialTheme.typography.bodyMedium,
+                        modifier = Modifier.semantics { testTag = Tags.FEED_POST_VESSEL }
                     )
                 }
                 if (entry.infusions != null) {
                     Text(
                         text = "${entry.infusions} прол.",
-                        style = MaterialTheme.typography.bodyMedium
+                        style = MaterialTheme.typography.bodyMedium,
+                        modifier = Modifier.semantics { testTag = Tags.FEED_POST_INFUSIONS }
                     )
                 }
             }

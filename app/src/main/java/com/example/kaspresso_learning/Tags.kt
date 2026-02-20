@@ -14,14 +14,25 @@ object Tags {
 
     // Name Input Screen
     const val NAME_CONTAINER = "name_input_screen_container"
-    const val NAME_EDIT_TEXT = "name_input_screen_edit_text"
-    // Login button — NO TAG (для обучения)
+    const val NAME_INPUT_TITLE = "name_input_screen_title"
+    const val NAME_INPUT_TEXT = "name_input_screen_edit_text"
+    const val NAME_INPUT_LOGIN_BUTTON = "name_input_login_button"
 
     // Feed Screen
     const val FEED_CONTAINER = "feed_screen_container"
     const val FEED_TITLE = "feed_screen_title"
     const val FEED_POST = "feed_post"                           // + "_$index"
+    const val FEED_LIST = "feed_screen_list"
     const val FEED_FAB = "feed_screen_fab"
+    const val FEED_POST_AVATAR = "feed_post_avatar"
+    const val FEED_POST_AUTHOR_NAME = "feed_post_author_name"
+    const val FEED_POST_DATE = "feed_post_date"
+    const val FEED_POST_TEA_NAME = "feed_post_tea_name"
+    const val FEED_POST_TEA_TYPE = "feed_post_tea_type"
+    const val FEED_POST_WEIGHT = "feed_post_weight_grams"
+    const val FEED_POST_VOLUME = "feed_post_volume_ml"
+    const val FEED_POST_VESSEL = "feed_post_vessel"
+    const val FEED_POST_INFUSIONS = "feed_post_infusions"
 
     // New Brewing Screen
     const val BREWING_CONTAINER = "new_brewing_container"
